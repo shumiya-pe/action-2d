@@ -47,7 +47,10 @@ export class GameScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, LEVEL_WIDTH, GAME_HEIGHT);
     this.cameras.main.startFollow(this.player, true, 0.12, 0.12);
 
-    this.controls = new Controls(this);
+    this.controls = new Controls(this, {
+      moveButtons: true,
+      actions: [{ id: 'jump', label: '▲', keys: ['SPACE', 'UP'] }],
+    });
   }
 
   update(): void {

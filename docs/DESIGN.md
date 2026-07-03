@@ -58,10 +58,11 @@
 
 現在のイベント:
 
-| イベント        | 方向           | ペイロード  | 用途             |
-| --------------- | -------------- | ----------- | ---------------- |
-| `phase-changed` | Phaser → React | `GamePhase` | シーン遷移の通知 |
-| `score-changed` | Phaser → React | `number`    | HUD のスコア更新 |
+| イベント         | 方向           | ペイロード      | 用途                      |
+| ---------------- | -------------- | --------------- | ------------------------- |
+| `phase-changed`  | Phaser → React | `GamePhase`     | シーン遷移の通知          |
+| `score-changed`  | Phaser → React | `number`        | HUD のスコア更新          |
+| `status-changed` | Phaser → React | `StatusPayload` | バフ・武装の HUD 表示更新 |
 
 ### 3.3 ゲームの追加方法
 

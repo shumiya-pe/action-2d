@@ -25,12 +25,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     const onGround = this.body.blocked.down;
-    if (controls.consumeJump() && onGround) {
+    if (controls.consumePress('jump') && onGround) {
       this.setVelocityY(PLAYER_JUMP_VELOCITY);
     }
 
     // ボタンを早く離すとジャンプが低くなる（可変ジャンプ）
-    if (!controls.jumpHeld && this.body.velocity.y < -240) {
+    if (!controls.isHeld('jump') && this.body.velocity.y < -240) {
       this.setVelocityY(-240);
     }
   }

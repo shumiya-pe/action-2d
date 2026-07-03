@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { createGame } from '../core/createGame';
-import { platformerGame } from '../games/platformer';
+import { protoGame } from '../games/proto';
 
 /**
  * Phaser のマウントポイント。
@@ -13,7 +13,8 @@ export function GameCanvas() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const game = createGame(containerRef.current, platformerGame);
+    // 起動するゲームをここで選ぶ（platformer に戻す場合は import を差し替える）
+    const game = createGame(containerRef.current, protoGame);
     return () => {
       game.destroy(true);
     };

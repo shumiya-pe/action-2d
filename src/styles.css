@@ -45,11 +45,34 @@ body {
   top: max(12px, env(safe-area-inset-top));
   left: max(16px, env(safe-area-inset-left));
   color: #f4f4f4;
+  pointer-events: none;
+}
+
+.hud__score {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  pointer-events: none;
+}
+
+.hud__badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.hud__badge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(56, 183, 100, 0.85);
+  color: #0f0f1a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hud__badge--weapon {
+  background: rgba(255, 205, 117, 0.9);
 }
 
 /* 縦持ちのスマホでのみ回転を促す */
