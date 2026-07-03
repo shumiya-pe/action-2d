@@ -20,6 +20,8 @@ Vite + TypeScript + React + Phaser 3 による 2D アクションゲーム開発
 Node.js 22 以上を推奨。CI（GitHub Actions）では push / PR ごとに
 lint → format:check → typecheck → build を実行する。
 
+詳細な設計仕様は [docs/DESIGN.md](./docs/DESIGN.md) を参照。
+
 ## アーキテクチャ
 
 React は「起動シェルと DOM ベースの UI」だけを担当し、
