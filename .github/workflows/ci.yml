@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v5
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 依存関係インストール
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: フォーマットチェック
+        run: npm run format:check
+
+      - name: 型チェック
+        run: npm run typecheck
+
+      - name: ビルド
+        run: npm run build
