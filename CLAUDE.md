@@ -8,6 +8,13 @@ Claude Code は作業前に `README.md`、`CHANGELOG.md`、必要に応じて `d
 - コミット・push・status確認は `action-2d` 内で行う
 - 副業/ゲームアプリ全体の方針や進捗が変わる場合は `bun-hq` の該当STATE/README更新を検討する
 
+
+## ブランチとデプロイ
+
+- **`main` は統合ブランチ、`release` が本番ブランチ**（2026-09-09〜）。`main` への push は
+  Vercel の Preview デプロイまでで、**公開はされない**。公開は `release` への fast-forward 昇格でのみ起きる
+- 公開は bun-hq の `/merge-ai <リポジトリ> --publish` で行う。`release` に直接コミットを作らない
+
 ## 開発コマンド
 - `npm install`
 - `npm run dev`
